@@ -12,11 +12,11 @@ from .base_frontend import ScatteringBase3D
 
 class HarmonicScatteringTensorFlow3D(ScatteringTensorFlow, ScatteringBase3D):
     def __init__(self, J, shape, L=3, sigma_0=1, max_order=2,
-            rotation_covariant=True, method='integral', points=None,
+            rotation_covariant=True, method='integral', points=None, fourier=True,
             integral_powers=(0.5, 1., 2.), backend='tensorflow', name='HarmonicScattering3D'):
         ScatteringTensorFlow.__init__(self, name=name)
         ScatteringBase3D.__init__(self, J, shape, L, sigma_0, max_order,
-                                  rotation_covariant, method, points,
+                                  rotation_covariant, method, points, fourier,
                                   integral_powers, backend)
         self.build()
 
